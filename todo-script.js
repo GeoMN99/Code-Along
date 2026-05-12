@@ -28,3 +28,13 @@ function addTask() {
     });
 }
 
+document.getElementById("new-task").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const description = document.getElementById("task-description").value;
+    if (description) {
+        const task = new Task(description);
+        taskList.addTask(task);
+        displayTasks();
+        document.getElementById("new-task").reset();
+    }
+});
