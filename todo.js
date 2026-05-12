@@ -31,3 +31,13 @@ TaskList.prototype.findTask = function(id) {
     }
     return false;
 };
+
+TaskList.prototype.deleteTask = function(id)  {
+    for (let i = 0; i < this.tasks.length; i++) {
+        if (this.tasks[i].id === id) {
+            this.tasks.splice(i, 1);
+            return true;
+        }
+    }
+    return false;
+};
