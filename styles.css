@@ -46,3 +46,13 @@ ul li.done {
     text-decoration: line-through;
     color: gray;
 }
+
+button {
+    margin: 5px 3px;
+    padding: 6px 14px;
+    cursor: pointer;
+}
+
+#contacts p:hover {
+    color: darkblue;
+}
