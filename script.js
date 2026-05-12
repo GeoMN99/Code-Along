@@ -19,7 +19,7 @@ function showContactDetails(id) {
     if (contact) {
         selectedContactId = id;
         document.getElementById("detail-name").textContent = contact.fullName();
-        document.getElementById("detail-phone").textContent = contact.phoneNUmber;
+        document.getElementById("detail-phone").textContent = contact.phoneNumber;
         document.getElementById("contact-details").style.display = "block";
     }
 }
@@ -34,15 +34,15 @@ document.getElementById("new-contact").addEventListener("submit", function(e) {
         const contact = new Contact(fisrtName, lastName, phone);
         addressBook.addContact(contact);
         displayContact();
-        document.getElementById("new-contact").requestFullscreen();
+        document.getElementById("new-contact").reset();
     }
 });
 
-document.getElementById("delete-contact").addEventListener("click", function() {
-    if (selectedContactsId) {
+document.getElementById("delete-btn").addEventListener("click", function() {
+    if (selectedContactId) {
         addressBook.deleteContact(selectedContactId);
         document.getElementById("contact-details").style.display = "none";
         selectedContactId = null;
-        displayContacts();
+        displayContact();
     }
 });
