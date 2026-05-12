@@ -28,3 +28,21 @@ form button {
     border: 1px solid #ccc;
     padding: 15px;
 }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+ul li.done {
+    text-decoration: line-through;
+    color: gray;
+}
