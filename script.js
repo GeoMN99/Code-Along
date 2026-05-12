@@ -14,3 +14,13 @@ function displayContact() {
     });
 }
 
+function showContactDetails(id) {
+    const contact =addressBook.findContact(id);
+    if (contact) {
+        selectedContactId = id;
+        document.getElementById("detail-name").textContent = contact.fullName();
+        document.getElementById("detail-phone").textContent = contact.phoneNUmber;
+        document.getElementById("contact-details").style.display = "block";
+    }
+}
+
