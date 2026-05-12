@@ -38,3 +38,11 @@ document.getElementById("new-contact").addEventListener("submit", funtion(e) {
     }
 });
 
+document.getElementById("delete-contact").addEventListener("click", function() {
+    if (selectedContactsId) {
+        addressBook.deleteContact(selectedContactId);
+        document.getElementById("contact-details").style.display = "none";
+        selectedContactId = null;
+        displayContacts();
+    }
+});
