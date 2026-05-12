@@ -28,10 +28,10 @@ document.getElementById("new-contact").addEventListener("submit", function(e) {
     e.preventDefault();
     const firstName = document.getElementById("first-name").value;
     const lastName = document.getElementById("last-name").value;
-    const phone = document.getElementById("phone").value;
+    const phone = document.getElementById("phone-number").value;
 
-    if (fisrtName && lastName && phone) {
-        const contact = new Contact(fisrtName, lastName, phone);
+    if (firstName && lastName && phone) {
+        const contact = new Contact(firstName, lastName, phone);
         addressBook.addContact(contact);
         displayContact();
         document.getElementById("new-contact").reset();

@@ -8,18 +8,18 @@ Contact.prototype.fullName =function() {
     return this.firstName + " " + this.lastName;
 };
 
-function Addressbook() {
+function AddressBook() {
     this.contacts = [];
     this.currentId = 1;
 }
 
-Addressbook.prototype.addContact =function(contact) {
+AddressBook.prototype.addContact =function(contact) {
     contact.id = this.currentId;
     this.contacts.push(contact);
     this.currentId++;
 }
 
-Addressbook.prototype.findContact = function(id) {
+AddressBook.prototype.findContact = function(id) {
     for (let i=0; i <this.contacts.length; i++) {
         if (this.contacts[i].id === id) {
             return this.contacts[i];
@@ -28,7 +28,7 @@ Addressbook.prototype.findContact = function(id) {
     return false;
 };
 
-Addressbook.prototype.deleteContact = function(id) {
+AddressBook.prototype.deleteContact = function(id) {
     for (let i=0; i <this.contacts.length; i++) {
         if (this.contacts[i].id === id) {
             this.contacts.splice(i, 1);

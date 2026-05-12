@@ -1,6 +1,6 @@
 let taskList = new TaskList();
 
-function addTask() {
+function displayTasks() {
     const ul =document.getElementById("task-list");
     ul.innerHTML = "";
     taskList.tasks.forEach(function(task) {
@@ -11,9 +11,9 @@ function addTask() {
           li.style.textDecoration = "line-through";  
         }
 
-        const deleteButton =document.crreateElement("button");
-        done.Button.textContent = task.done ? "Undo" : "Done";
-        doneBUtton.addEventListener("click", function() {
+        const doneButton = document.createElement("button");
+        doneButton.textContent = task.done ? "Undo" : "Done";
+        doneButton.addEventListener("click", function() {
             if (task.done) {
                 task.markUndone();
             } else {
@@ -22,9 +22,16 @@ function addTask() {
             displayTasks();
         });
 
-        li.appenndChild(doneButton);
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.addEventListener("click", function() {
+            taskList.deleteTask(task.id);
+            displayTasks();
+        });
+
+        li.appendChild(doneButton);
         li.appendChild(deleteButton);
-        ul.apppendChild(li);
+        ul.appendChild(li);
     });
 }
 
