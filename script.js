@@ -1,4 +1,4 @@
-let addressBook = new Addressbook();
+let addressBook = new AddressBook();
 let selectedContactId = null;
 
 function displayContact() {
@@ -24,9 +24,9 @@ function showContactDetails(id) {
     }
 }
 
-document.getElementById("new-contact").addEventListener("submit", funtion(e) {
+document.getElementById("new-contact").addEventListener("submit", function(e) {
     e.preventDefault();
-    const firstName = document.grtElementById("first-name").value;
+    const firstName = document.getElementById("first-name").value;
     const lastName = document.getElementById("last-name").value;
     const phone = document.getElementById("phone").value;
 
